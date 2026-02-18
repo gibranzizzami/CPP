@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    vector<string> greetings ={"hello", "world"}; 
+    vector<string> greetings = {"hello", "world"}; 
 
     for (string greeting : greetings) {
         cout << greeting << "/n";
