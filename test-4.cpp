@@ -1,13 +1,16 @@
-// string line 1 hello dan line 2 world
 #include <iostream>
-#include <vector>
-using namespace std;
+#include <fstream>
 
 int main() {
-    vector<string> greetings = {"hello", "world"}; 
+    std::ofstream file("output.txt");
 
-    for (string greeting : greetings) {
-        cout << greeting << "/n";
+    if (file.is_open()) {
+        file << "hello" << std::endl;
+        file << "world" << std::endl;
+        file.close();
+        std::cout << "file berhasil dibuat" << std::endl;
+    } else {
+        std::cout << "gagal membuat file." << std::endl;
     }
     return 0;
 }
