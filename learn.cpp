@@ -8,19 +8,25 @@ namespace fs = std::filesystem;
 
 int main() {
     // 1. Membuat folder
-    fs::create_directory("folder_asli");
-    cout << "Folder 'folder_asli' dibuat.\n";
+    {
+        fs::create_directory("folder_asli");
+        cout << "Folder 'folder_asli' dibuat.\n";
+    }
 
     // 2. Membuat file
-    ofstream("folder_asli/data.txt").close();
-    cout << "File 'data.txt' dibuat di folder_asli.\n";
+    {
+        ofstream("folder_asli/data.txt");
+        cout << "File 'data.txt' dibuat di folder_asli.\n";
+    }
 
     // 3. Write file (line 1 hello, line 2 world)
-    ofstream tulis("folder_asli/data.txt");
-    tulis << "hello" << endl;
-    tulis << "world" << endl;
-    tulis.close();
-    cout << "File diisi dengan 'hello' dan 'world'.\n";
+    {
+        ofstream tulis("folder_asli/data.txt");
+        tulis << "hello" << endl;
+        tulis << "world" << endl;
+        tulis.close();
+        cout << "File diisi dengan 'hello' dan 'world'.\n";
+    }
 
     // 4. Update file (tambah tanda seru)
     {
